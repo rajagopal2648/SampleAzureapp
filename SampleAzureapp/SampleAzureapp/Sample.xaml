@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleAzureapp.Sample">
+    <!--<ContentPage.Content>-->
+        <ListView x:Name="MyList"
+                ItemSelected="OnSelected"
+                IsPullToRefreshEnabled="true" Refreshing="OnRefresh"
+                Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="OnComplete" Text="Complete" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+                            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding FieldName}"  />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    <!--</ContentPage.Content>-->
+</ContentPage>
